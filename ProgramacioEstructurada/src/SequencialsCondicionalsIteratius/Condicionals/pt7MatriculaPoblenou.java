@@ -23,17 +23,17 @@ public class pt7MatriculaPoblenou {
         int edatDescompteAplicat = (int) (matricula * 0.1);
         int ufsSoltesPreuFinal = ufsSoltes * 25;
 
-        if (cursComplet == false && ufsSoltesPreuFinal < matricula){
+        if (!cursComplet && ufsSoltesPreuFinal < matricula){
             System.out.println(ufsSoltesPreuFinal);
         } else if (edat > 27) {
             System.out.println(edatDescompteAplicat);
-        } else if (monoparentalEspecial == true) {
+        } else if (monoparentalEspecial) {
             System.out.println(monoparentalEspecialDescompteAplicat);
-        } else if (monoparentalNormal == true) {
+        } else if (monoparentalNormal) {
             System.out.println(monoparentalNormalDescompteAplicat);
-        } else if (familiaNombrosa == true) {
+        } else if (familiaNombrosa) {
             System.out.println(familiaNombrosaDescompteAplicat);
-        } else if (matriculaHonor == true) {
+        } else if (matriculaHonor) {
             System.out.println(matriculaHonorDescompteAplicat);
         } else {
             System.out.println(matricula);

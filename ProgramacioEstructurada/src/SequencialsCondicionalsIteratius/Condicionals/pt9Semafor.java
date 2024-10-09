@@ -13,23 +13,30 @@ public class pt9Semafor {
         boolean passVianants = semaforVianants.equals("VERD");
         boolean passCotxes = semaforCotxes.equals("VERD");
 
-        if (passTranvies && passVianants || passTranvies && passCotxes || passTranvies && passCotxes || passTranvies && passVianants && passCotxes) {
+        if (passTranvies && passVianants || passVianants && passCotxes || passTranvies && passCotxes) {
+
             System.out.println("POSSIBLE COLISIO");
+
         } else {
+
+            boolean pass = false;
+
             switch (rol) {
                 case "TRANVIA":
-                    if (passTranvies) System.out.println("ENDAVANT");
-                    else System.out.println("PARAR");
+                    pass = passTranvies;
                     break;
                 case "VIANANT":
-                    if (passVianants) System.out.println("ENDAVANT");
-                    else System.out.println("PARAR");
+                    pass = passVianants;
                     break;
                 case "COTXE":
-                    if (passCotxes) System.out.println("ENDAVANT");
-                    else System.out.println("PARAR");
+                    pass = passCotxes;
                     break;
+                default:
+                    System.out.println("PARAR");
             }
+
+            if (pass == true) System.out.println("ENDAVANT");
+            else System.out.println("PARAR");
         }
     }
 }
