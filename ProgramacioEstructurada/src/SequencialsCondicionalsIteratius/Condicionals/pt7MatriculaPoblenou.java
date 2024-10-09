@@ -23,7 +23,7 @@ public class pt7MatriculaPoblenou {
         int edatDescompteAplicat = (int) (matricula * 0.1);
         int ufsSoltesPreuFinal = ufsSoltes * 25;
 
-        if (cursComplet == false){
+        if (cursComplet == false && ufsSoltesPreuFinal < matricula){
             System.out.println(ufsSoltesPreuFinal);
         } else if (edat > 27) {
             System.out.println(edatDescompteAplicat);
