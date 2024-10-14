@@ -7,12 +7,14 @@ public class pt10DesnivellCiclista {
         Scanner sc = new Scanner(System.in);
 
         int desnivell = 0;
+        int alturaPorts;
 
-        for (int i = 0; i < 1; i++) {
-            int alturaPorts = sc.nextInt();
-            if (alturaPorts <= -1) break;
-            else alturaPorts += desnivell;
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+            alturaPorts = sc.nextInt();
+            if (alturaPorts == -1) break;
+            desnivell += alturaPorts;
         }
-        System.out.println(desnivell);
+        if (desnivell < 400) System.out.println("ETAPA PLANA");
+        else System.out.println("ETAPA MUNTANYA");
     }
 }
